@@ -113,3 +113,13 @@ function saveAndRefresh() {
 
 // Default view
 showTab('inventory');
+
+// This runs every time a page loads
+window.onload = function() {
+    if (document.getElementById('inventoryBody')) renderInventory();
+    if (document.getElementById('salesTotalDisplay')) renderSales();
+    if (document.getElementById('todoList')) {
+        renderInventory(); // Needed to fill the dropdown
+        renderOrders();
+    }
+};
