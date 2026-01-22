@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - Michelle's Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="tabs">
+        <a href="sales.html">Total Sales</a>
+        <a href="inventory.html">Inventory/Items</a>
+        <a href="orders.html" class="active">Orders Checklist</a>
+    </nav>
+
+    <div class="container">
+        <h2>Today's Orders</h2>
+        <div class="input-group">
+            <select id="orderItemSelect"></select>
+            <input type="number" id="orderQty" value="1" min="1">
+            <button onclick="addOrder()">Add to List</button>
+        </div>
+        
+        <h3>To Do</h3>
+        <div id="todoList" class="checklist"></div>
+        
+        <hr>
+        
+        <h3>Done</h3>
+        <div id="doneList" class="checklist done-section"></div>
+        <button class="clear-btn" onclick="clearDone()">Clear Done Items</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
