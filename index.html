@@ -3,31 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mom's Inventory</title>
+    <title>Mom's Business Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Inventory Manager</h1>
-        
-        <div class="input-section">
-            <input type="text" id="itemName" placeholder="Item Name">
-            <input type="number" id="itemQty" placeholder="Quantity">
-            <button onclick="addItem()">Add Item</button>
-        </div>
+    <nav class="tabs">
+        <button onclick="showTab('sales')">Total Sales</button>
+        <button onclick="showTab('inventory')">Inventory/Items</button>
+        <button onclick="showTab('orders')">Orders Checklist</button>
+    </nav>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="inventoryBody">
-                </tbody>
-        </table>
+    <div class="container">
+        <section id="sales" class="tab-content">
+            <h2>Sales Overview</h2>
+            <select id="salesFilter" onchange="renderSales()">
+                <option value="today">Today</option>
+                <option value="3days">Last 3 Days</option>
+                <option value="week">Last Week</option>
+                <option value="month">Last Month</option>
+                <option value="all">Total Sales</option>
+            </select>
+            <h3 id="salesTotalDisplay">Total: $0.00</h3>
+            <div id="salesList"></div>
+        </section>
+
+        <section id="inventory" class="tab-content">
+            <h2>Manage Items</h2>
+            <div class="input-group">
+                <input type="text" id="itemName" placeholder="Item Name">
+                <input type="number" id="itemPrice" placeholder="Price">
+                <input type="number" id="itemQty" placeholder="Stock Qty">
+                <button onclick="addItem()">Add Item</button>
+            </div>
+            <table id="inventoryTable">
+                <thead>
+                    <tr><th>Name</th><th>Price</th><th>Stock</th><th>Action</th></tr>
+                </thead>
+                <tbody id="inventoryBody"></tbody>
+            </table>
+        </section>
+
+        <section id="orders" class="tab-content">
+            <h2>Today's Orders</h2>
+            <div class="input-group">
+                <select id="orderItemSelect"></select>
+                <input type="number" id="orderQty" placeholder="Qty">
+                <button onclick="addOrder()">Add to Checklist</button>
+            </div>
+            <h3>To Do</h3>
+            <ul id="todoList"></ul>
+            <hr>
+            <h3>Done</h3>
+            <ul id="doneList"></ul>
+        </section>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
