@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales - Michelle's Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="tabs">
+        <a href="sales.html" class="active">Total Sales</a>
+        <a href="inventory.html">Inventory/Items</a>
+        <a href="orders.html">Orders Checklist</a>
+    </nav>
+
+    <div class="container">
+        <h2>Sales Overview</h2>
+        <div class="filter-section">
+            <label>View sales from:</label>
+            <select id="salesFilter" onchange="renderSales()">
+                <option value="today">Today</option>
+                <option value="3days">Last 3 Days</option>
+                <option value="week">Last Week</option>
+                <option value="month">Last Month</option>
+                <option value="all">Everything</option>
+            </select>
+        </div>
+        <div class="total-card">
+            <h1 id="salesTotalDisplay">$0.00</h1>
+            <p>Total Revenue</p>
+        </div>
+        <div id="salesList"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
