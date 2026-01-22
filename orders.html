@@ -9,14 +9,16 @@
 <body>
     <nav class="tabs">
         <a href="sales.html">Total Sales</a>
-        <a href="inventory.html">Inventory/Items</a>
+        <a href="index.html">Inventory/Items</a>
         <a href="orders.html" class="active">Orders Checklist</a>
     </nav>
 
     <div class="container">
         <h2>Today's Orders</h2>
         <div class="input-group">
-            <select id="orderItemSelect"></select>
+            <select id="orderItemSelect">
+                <option value="">-- Loading Items --</option>
+            </select>
             <input type="number" id="orderQty" value="1" min="1">
             <button onclick="addOrder()">Add to List</button>
         </div>
@@ -28,7 +30,7 @@
         
         <h3>Done</h3>
         <div id="doneList" class="checklist done-section"></div>
-        <button class="clear-btn" onclick="clearDone()">Clear Done Items</button>
+        <button class="clear-btn" onclick="clearDone()">Clear Finished Orders</button>
     </div>
     <script src="script.js"></script>
 </body>
