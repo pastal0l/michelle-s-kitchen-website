@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Items - Michelle's Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="tabs">
+        <a href="sales.html">Total Sales</a>
+        <a href="inventory.html" class="active">Inventory/Items</a>
+        <a href="orders.html">Orders Checklist</a>
+    </nav>
+
+    <div class="container">
+        <h2>Manage Items</h2>
+        <p class="hint">Tip: Click on a name or price to edit it, then click away to save.</p>
+        <div class="input-group">
+            <input type="text" id="itemName" placeholder="Item Name">
+            <input type="number" id="itemPrice" placeholder="Price">
+            <button onclick="addItem()">Add New Item</button>
+        </div>
+        <table id="inventoryTable">
+            <thead>
+                <tr><th>Name</th><th>Price ($)</th><th>Action</th></tr>
+            </thead>
+            <tbody id="inventoryBody"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
